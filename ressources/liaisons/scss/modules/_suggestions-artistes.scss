@@ -1,0 +1,194 @@
+/**
+ * @author Gabriel Caron <1861095@csfoy.ca>
+ * @version 2020.1
+*
+* SUGGESTIONS D'ARTISTES (VOUS POURRIEZ AUSSI AIMER...)
+*
+*/
+
+.suggestions {
+  color: $blanc;
+  background-color: #131344;
+  padding: 0 3rem 6rem 0;
+
+  @media (min-width: $desktop800px) {
+	padding: 0 3rem 7rem 3rem;
+  }
+  @media (min-width: 1200px) {
+	border-radius: 0 150px;
+  }
+
+  &__conteneur {
+	@include conteneur1200px;
+
+	& .conteneur-titre {
+	  width: 90%;
+	  margin: 0 3rem;
+	  grid-column: 1 / 13;
+	  justify-content: flex-end;
+	  @media (min-width: $desktop1000px) {
+		grid-column: 1 / 12;
+		width: initial;
+		margin: 0 3rem;
+	  }
+	}
+
+	@media (min-width: $desktop800px) {
+	  @include rangeeGrid12col;
+	}
+  }
+
+  &__titre {
+	line-height: 90%;
+	@include fontSize(40px);
+	margin: 0.25em 0 0 0;
+	width: 100%;
+	@media (min-width: 500px) {
+	  @include fontSize(50px);
+	}
+	@media (min-width: $desktop600px) {
+	  @include fontSize(60px);
+	}
+	@media (min-width: 700px) {
+	  @include fontSize(70px);
+	}
+	@media (min-width: $desktop800px) {
+	  @include fontSize(80px);
+	}
+	@media (min-width: $desktop1000px) {
+	  @include fontSize(90px);
+	  width: initial;
+	}
+
+	&ligne1 {
+	  display: block;
+	  @media (min-width: $desktop1000px) {
+		text-align: right;
+	  }
+	}
+
+	&ligne2 {
+	  display: block;
+	  text-align: right;
+	  @media (min-width: $desktop1000px) {
+		margin-right: 1.5em;
+	  }
+	}
+  }
+
+  &__liste {
+	list-style-type: none;
+	padding: 0;
+	margin: 2rem 0;
+	@media (min-width: $desktop800px) {
+	  @include rangeeGrid12col;
+	  grid-column: 1 / 13;
+	}
+  }
+
+  &__item {
+	margin: 5rem 0;
+	@media (min-width: $desktop800px) {
+	  grid-column: span 4;
+	  margin: 0;
+	  &:nth-child(2) {
+		margin-top: 50%;
+	  }
+	}
+
+	&:hover {
+
+	  .suggestions {
+		&__img {
+		  border: 5px solid $blanc;
+		  box-shadow: 0 0 50px 0 rgba(255, 255, 255, 0.15);
+		}
+
+		&__artiste {
+		  text-decoration: underline;
+		}
+	  }
+	}
+  }
+
+  &__img {
+	border-radius: 0 10rem 10rem 0;
+	height: 45rem;
+	object-fit: cover;
+	object-position: top;
+	width: 100%;
+	border: 5px solid transparent;
+	transition: all, 0.3s ease-in-out;
+	@media (min-width: $desktop800px) {
+	  border-radius: 20rem;
+	}
+  }
+
+  &__lien {
+	color: $blanc;
+	text-decoration: none;
+  }
+
+  &__artiste {
+	@include fontSize(30px);
+	margin: 2rem 0 0 0;
+	padding-left: 3rem;
+	transition: all, 0.3s ease-in-out;
+
+	@media (min-width: $desktop600px) {
+	  @include fontSize(50px);
+	}
+	@media (min-width: $desktop800px) {
+	  @include fontSize(30px);
+	}
+	@media (min-width: $desktop1000px) {
+	  @include fontSize(40px);
+	}
+	@media (min-width: $desktop1200px) {
+	  @include fontSize(50px);
+	}
+
+	&::after {
+	  background: url("../images/fleche_droite.svg") no-repeat center;
+	  background-size: contain;
+	  height: 2.5rem;
+	  width: 2.5rem;
+	  display: inline-block;
+	  vertical-align: middle;
+	  content: "";
+	  @media (min-width: $desktop600px) {
+		height: 3.5rem;
+		width: 3.5rem;
+		vertical-align: initial;
+	  }
+	  @media (min-width: $desktop800px) {
+		height: 2.5rem;
+		width: 2.5rem;
+		vertical-align: middle;
+	  }
+	  @media (min-width: $desktop1000px) {
+		height: 3.5rem;
+		width: 3.5rem;
+		vertical-align: initial;
+	  }
+	}
+  }
+
+  &__styles {
+	font-family: $Montserrat-Bold;
+	font-weight: bold;
+	color: $jaune;
+	padding-left: 3rem;
+	@include fontSize(25px);
+	margin: 0;
+	@media (min-width: $desktop600px) {
+	  @include fontSize(35px);
+	}
+	@media (min-width: $desktop800px) {
+	  @include fontSize(25px);
+	}
+	@media (min-width: $desktop1000px) {
+	  @include fontSize(35px);
+	}
+  }
+}

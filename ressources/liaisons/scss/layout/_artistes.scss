@@ -1,0 +1,202 @@
+/**
+* @author Gabriel Caron <1861095@csfoy.ca>
+* @version 2020.1
+*
+* ------------------
+* TABLE DES MATIERES
+* ------------------
+* SECTION ARTISTES
+** Bloc identification de l'artiste
+** Bloc infos de l'artiste
+** Bloc galerie photos
+*/
+
+
+/* Bloc identification de l'artiste */
+
+.main {
+  & .photo-artiste {
+	@include conteneur1200px;
+	@include rangeeGrid12col;
+	margin: 0rem 0 7rem 0;
+	@include paddingMobile3rem;
+	position: relative;
+	z-index: 100;
+	@media (min-width: $desktop600px) {
+	  top: -25rem;
+	  margin: 0 auto;
+	  padding: 0;
+	}
+  }
+}
+
+.identification {
+  color: $blanc;
+  background-color: $bleuMarin;
+  padding: 55rem 3rem 10rem 3rem;
+  margin-top: -60rem;
+  @media (min-width: $desktop600px) {
+	padding: 8rem 3rem 9rem 3rem;
+	margin-top: -30rem;
+  }
+  @media (min-width: $desktop1200px) {
+	border-radius: 0 150px;
+  }
+
+  &__conteneur {
+	@include conteneur1200px;
+
+	& .conteneur-titre {
+	}
+
+	& > * {
+	  margin: 0 0 0 calc(100% / 12);
+	}
+  }
+
+  &__nom {
+	@include fontSize(50px);
+	text-transform: uppercase;
+	@media (min-width: $desktop800px) {
+	  @include fontSize(70px);
+	}
+	@media (min-width: $desktop1000px) {
+	  @include fontSize(90px);
+	}
+  }
+
+  &__styles-liste {
+	padding: 0;
+	color: $jaune;
+	font-family: $Montserrat-Bold;
+	font-weight: bold;
+	@include fontSize(35px);
+  }
+
+  &__styles-item {
+	display: inline;
+  }
+
+  &__styles-item::after {
+	content: " + ";
+  }
+
+  &__styles-item:last-child::after {
+	content: "";
+  }
+
+  &__provenance {
+	font-family: $Montserrat-Bold;
+	font-weight: bold;
+	@include fontSize(25px);
+  }
+}
+
+/* Bloc infos de l'artiste */
+
+.infos {
+  @include conteneur1200px;
+  @include rangeeGrid12col;
+  @include paddingMobile3rem;
+
+  &__conteneur {
+	grid-column: 1 / 13;
+	grid-row: 2;
+	@media (min-width: $desktop1000px) {
+	  grid-column: 2 / 8;
+	  grid-row: 1;
+	}
+  }
+
+  &__voirAussiListe {
+	list-style-type: none;
+	padding: 0;
+  }
+
+  & .quand {
+	grid-column: 1 / 13;
+	grid-row: 1;
+	@media (min-width: $desktop1000px) {
+	  grid-column: 8 / 13;
+	}
+
+	&__conteneur {
+	  border: 5px solid #E6E6E6;
+	  border-radius: 3em;
+	  padding: 4rem 0 7rem 0;
+	  text-align: center;
+	  position: relative;
+	  top: -4.5rem;
+	  margin-bottom: -7rem;
+	  @media (min-width: $desktop600px) {
+		border-radius: 20em;
+	  }
+	}
+
+	&__liste {
+	  list-style-type: none;
+	  padding: 0;
+	}
+
+	&__item {
+	  margin-bottom: 1.5rem;
+	}
+  }
+}
+
+
+/* Bloc galerie photos */
+
+.galerie {
+  @include conteneur1200px;
+  @include paddingMobile3rem;
+
+  & .conteneur-titre {
+	@media (min-width: $desktop1000px) {
+	  margin: 0 0 0 calc(100% / 12);
+	}
+  }
+
+  &__liste {
+	padding: 2rem 0 3rem 0;
+	@media (min-width: $desktop800px) {
+	  @include rangeeGrid12col;
+	}
+	list-style-type: none;
+  }
+
+  &__item {
+	grid-column: span 1;
+	padding: 1.5rem 0;
+	@media (min-width: $desktop800px) {
+	  grid-column: span 4;
+	  padding: 0;
+	}
+	@media (min-width: $desktop1000px) {
+	  grid-column: span 3;
+	}
+  }
+
+  @media (min-width: $desktop1000px) {
+	&__item:first-child {
+	  grid-column: 2 / 5;
+	}
+  }
+
+  &__figure {
+	margin: 0;
+  }
+
+  &__img {
+	border-radius: 3rem;
+	height: 50rem;
+	object-fit: cover;
+	object-position: top;
+	width: 100%;
+	@media (min-width: $desktop800px) {
+	  border-radius: 20rem;
+	}
+  }
+}
+
+

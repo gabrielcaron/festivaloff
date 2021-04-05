@@ -1,0 +1,104 @@
+/**
+* @author Gabriel Caron <1861095@csfoy.ca>
+*/
+
+
+/**** Typographie responsive ****/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $Montserrat-Regular;
+  @include fontSize(16px);
+  line-height: 1.5;
+  @media (min-width: $desktop600px) {
+  }
+}
+
+h1,
+.titreNiveau1,
+h2,
+.titreNiveau2,
+h3,
+.titreNiveau3 {
+  position: relative; // Nécessaire au positionnement correct du souligné
+  font-family: $Montserrat-Bold;
+  font-weight: bold;
+}
+
+h1,
+.titreNiveau1 {
+  @include fontSize(60px);
+  line-height: 100%;
+  margin: 0;
+  @media (min-width: $desktop600px) {
+    @include fontSize(90px);
+    padding-bottom: 15px;
+    position: relative;
+  }
+}
+
+
+h2,
+.titreNiveau2 {
+  @include fontSize(45px);
+  margin-bottom: 0;
+  line-height: 100%;
+  @media (min-width: $desktop600px) {
+	@include fontSize(70px);
+  }
+  &.titre-mini {
+    @include fontSize(35px);
+  }
+}
+
+h3,
+.titreNiveau3 {
+  @include fontSize(35px);
+  line-height: 100%;
+  @media (min-width: $desktop600px) {
+    @include fontSize(70px);
+  }
+}
+
+.texte-courant {
+  font-family: $Montserrat-Regular;
+  @include fontSize(25px);
+  line-height: 1.5;
+
+  &--desktop {
+	line-height: 1.5;
+  }
+}
+
+
+// Soulignés sous les titres
+
+.conteneur-titre {
+  display: inline-flex;
+  flex-wrap: wrap;
+
+  & .souligne--regulier {
+    height: 3rem;
+    width: 95%;
+    margin: -2.5rem 0 0 2rem;
+    border-radius: 10rem;
+    background-color: $jaune;
+  }
+  & .souligne--mini {
+    height: 2rem;
+    width: 95%;
+    margin: -1.5rem 0 0 1rem;
+    border-radius: 10rem;
+    background-color: #FFE34F;
+  }
+  .souligne--renverse {
+    height: 3rem;
+    width: 95%;
+    margin: -3rem 0 0 3rem;
+    border-radius: 10rem;
+    border: 0.3rem solid $jauneTransparent50;
+  }
+}

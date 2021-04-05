@@ -1,0 +1,68 @@
+/**
+* @author Gabriel Caron <1861095@csfoy.ca>
+*/
+
+.bouton {
+  border-radius: 18px;
+  color: $noir;
+  text-decoration: none;
+  border: 5px solid $jaune;
+  background-color: transparent;
+  font-family: $Montserrat-Bold;
+  font-weight: bold;
+  @include fontSize(20px);
+  text-align: center;
+  padding: 0.5rem;
+  transition: all, 0.3s ease-in-out;
+  @media (min-width: $desktop600px) {
+    padding: 0;
+  }
+  &:hover {
+    background-color: $jaune;
+    border: 5px solid $jaune;
+  }
+
+  &--hover {
+    background-color: $blanc;
+    border: none;
+  }
+
+  &--active {
+    background-color: lighten($jaune, 30%);
+    border: none;
+  }
+
+  &--inverse {
+    background-color: $jaune;
+    border: none;
+    &--hover {
+      background-color: $blanc;
+    }
+
+    &--active {
+      background-color: lighten($jaune, 30%);
+    }
+  }
+
+  &--navigation {
+    border-radius: 18px;
+    color: $noir;
+    text-decoration: none;
+    border: 5px solid $noir;
+    background-color: transparent;
+    font-family: $Montserrat-Bold;
+    font-weight: bold;
+    @include fontSize(20px);
+    text-align: center;
+    padding: 1rem;
+    transition: all, 0.3s ease-in-out;
+    @media (min-width: $desktop1000px) {
+      padding: 0.75rem 0.25rem;
+    }
+    &:hover {
+      background-color: $blanc;
+      border: 5px solid $blanc;
+      box-shadow: 0 0 50px 0 rgba(255,255,255,0.5);
+    }
+  }
+}

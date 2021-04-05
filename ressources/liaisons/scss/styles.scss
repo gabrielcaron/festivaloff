@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+/**
+ * @author Gabriel Caron <1861095@csfoy.ca>
+ * @version 2020.1
+ */
+/*
+ * ------------------
+ * TABLE DES MATIERES
+ * ------------------
+ * BIBLIOTHÈQUES
+ ** Normalize
+ * UTILITAIRES
+ ** Variables
+ ** Mixins
+ * BASE
+ ** Typographie
+ ** Hyperliens
+ ** Boutons
+ ** Grille
+ * LAYOUT
+ ** Menu mobile
+ ** En-tête commun
+ ** Pied de page commun
+ ** Section Artistes
+ * MODULES
+ ** Styles généraux (guide de style seulement)
+ ** Palette de couleurs (guide de style seulement)
+ ** Éléments interactifs (guide de style seulement)
+ ** Suggestions d'artistes
+ */
+
+/***** BIBLIOTHÈQUES *****/
+
+/** Normalize **/
+@import '../../../node_modules/normalize.scss/normalize.scss';
+
+/***** UTILITAIRES *****/
+
+/** Variables **/
+@import 'utilitaires/variables';
+
+/** Mixins **/
+@import 'utilitaires/mixins';
+
+/***** BASE *****/
+
+/** Typographie **/
+@import 'base/typo';
+
+/** Hyperliens **/
+@import 'base/hyperlien';
+
+/** Boutons **/
+@import 'base/bouton';
+
+/** Grille **/
+@import 'base/grille';
+
+/***** LAYOUT *****/
+/** Menu mobile **/
+@import "layout/menu";
+
+/** En-tête et photo de l'artiste **/
+@import "layout/entete";
+
+/** Pied de page **/
+@import "layout/pied";
+
+/** Section Artistes **/
+@import "layout/artistes";
+
+/***** MODULES *****/
+
+/** Styles généraux (Guide de styles) **/
+//@import 'modules/gds';
+
+/** Palette de couleurs (Guide de styles) **/
+//@import 'modules/palette';
+
+/** Éléments interactifs (Guide de styles) **/
+//@import 'modules/listeInteractivite';
+
+/** Suggestions d'artistes (Vous pourriez aussi aimer...) **/
+@import 'modules/suggestions-artistes';

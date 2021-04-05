@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Guide de styles OFF</title>
+  <link rel="stylesheet" href="liaisons/css/styles.css">
+</head>
+<body id="gds" class="gds">
+  <h1 class="gds__titre">Guide de styles</h1>
+
+  <section>
+
+    <h2 class="gds__sousTitre">Couleurs</h2>
+
+    <ul class="palette">
+      <li class="palette__item">
+        <div class="palette__couleur palette__couleur--jaune"></div>
+        <p class="palette__description"><code>$jaune</code> <br>#FFE34F</p>
+      </li>
+      <li class="palette__item">
+        <div class="palette__couleur palette__couleur--bleuViolet"></div>
+        <p class="palette__description"><code>$bleuViolet</code> <br>#3200C1</p>
+      </li>
+      <li class="palette__item">
+        <div class="palette__couleur palette__couleur--bleuMarin"></div>
+        <p class="palette__description"><code>$bleuMarin</code> <br>#131344</p>
+      </li>
+      <li class="palette__item">
+        <div class="palette__couleur palette__couleur--noir"></div>
+        <p class="palette__description"><code>$noir</code> <br>#000</p>
+      </li>
+      <li class="palette__item">
+        <div class="palette__couleur palette__couleur--blanc"></div>
+        <p class="palette__description"><code>$blanc</code> <br>#fff</p>
+      </li>
+    </ul>
+
+    <ul class="palette">
+      <li class="palette__item" style="flex: 0 1 17%;">
+        <div class="palette__couleur palette__couleur--jaune-alpha50"></div>
+        <p class="palette__description"><code>$jauneTrans50</code> <br>Transparence 50%</p>
+        <p class="palette__details">Utilisé pour les soulignés sous les titres</p>
+      </li>
+<!--      <li class="palette__item">-->
+<!--        <div class="palette__couleur palette__couleur&#45;&#45;bleuMoyen-alpha50"></div>-->
+<!--        <p class="palette__description"><code>$bleuMoyen</code> <br> Transparence 50%</p>-->
+<!--        <p class="palette__details">Utilisé comme couleur de fond pour le pied de page.</p>-->
+<!--      </li>-->
+<!--      <li class="palette__item">-->
+<!--        <div class="palette__couleur palette__couleur&#45;&#45;vertLime-alpha75"></div>-->
+<!--        <p class="palette__description"><code>$vertLime</code> <br> Transparence 75%</p>-->
+<!--        <p class="palette__details">Utilisé pour les étiquettes.</p>-->
+<!--      </li>-->
+<!--      <li class="palette__item">-->
+<!--        <div class="palette__couleur palette__couleur&#45;&#45;vertLime-alpha50"></div>-->
+<!--        <p class="palette__description"><code>$vertLime</code> <br> Transparence 50%</p>-->
+<!--        <p class="palette__details">Utilisé comme couleur de fond pour les medias sociaux.</p>-->
+<!--      </li>-->
+    </ul>
+
+    <table class="gds__tableau">
+      <thead>
+      <tr>
+        <th><h2 class="gds__sousTitre">Textes - Desktop</h2></th>
+        <th><h2 class="gds__sousTitre">Textes - Mobile</h2></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <p class="titreNiveau1 titreNiveau1--desktop">Titre niveau 1</p>
+          <p>
+            <small>Montserrat medium, 48pts sur écran large</small>
+            <br><small>Rectangle de 150px x 8px, couleur $bleuMoyen</small>
+          </p>
+        </td>
+        <td>
+          <p class="titreNiveau1 titreNiveau1--mobile">Titre niveau 1</p>
+          <p>
+            <small>Montserrat medium, 28 pts sur écran étroit</small>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p class="titreNiveau2 titreNiveau2--desktop">Titre niveau 2</p>
+          <p>
+            <small>Montserrat medium, 28pts sur écran large, en capitales</small>
+          </p></td>
+        <td>
+          <p class="titreNiveau2 titreNiveau2--mobile">Titre niveau 2</p>
+          <p>
+            <small>Montserrat medium, 18 pts sur écran étroit, en capitales</small>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p class="titreNiveau3 titreNiveau3--desktop">Titre niveau 3</p>
+          <p>
+            <small>Montserrat medium, 22pts sur écran large</small>
+          </p>
+        </td>
+        <td>
+          <p class="titreNiveau3 titreNiveau3--mobile">Titre niveau 3</p>
+          <p>
+            <small>Montserrat medium, 18 pts sur écran étroit</small>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p class="texte-courant texte--desktop">Texte courant lorem ipsum dolor sit amet, consectetur adipisicing elit. A corporis dolores enim eveniet id inventore laborum modi nam necessitatibus officia, perspiciatis quasi sint soluta, suscipit voluptates? Esse ex harum incidunt.</p>
+          <p><small>(Montserrat, 16pts avec interlignage de 24 pts)</small></p>
+        </td>
+        <td>
+          <p class="texte-courant texte--mobile">Texte courant lorem ipsum dolor sit amet, consectetur adipisicing elit. A corporis dolores enim eveniet id inventore laborum modi nam necessitatibus officia, perspiciatis quasi sint soluta, suscipit voluptates? Esse ex harum incidunt.</p>
+          <p><small>(Montserrat, 16pts avec interlignage de 22 pts)</small></p>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+
+
+    <h2 class="gds__sousTitre">Boutons / Éléments interactifs</h2>
+
+    <h3 class="gds__categorie">Hyperliens de base (pas de classe)</h3>
+
+    <ul class="listeInteractivite">
+      <li class="listeInteractivite__item">
+        <p><a class="hyperlien"  href="#">a:link</a></p>
+        <p>$bleuMarin plus saturé</p>
+      </li>
+      <li class="listeInteractivite__item">
+        <p><a class="hyperlien hyperlien--visited"  href="#">a:visited</a></p>
+        <p>$bleuViolet</p>
+      </li>
+      <li class="listeInteractivite__item">
+        <p><a class="hyperlien hyperlien--hover"  href="#">a:hover</a></p>
+        <p>$bleuMarin plus clair de 25%</p>
+
+      </li>
+      <li class="listeInteractivite__item">
+        <p><a class="hyperlien hyperlien--active"  href="#">a:active</a></p>
+        <p>$bleuMarin plus clair de 35%</p>
+      </li>
+    </ul>
+
+    <h3 class="gds__categorie">Boutons</h3>
+
+    <ul class="listeInteractivite" style="background-color: #FFE34F;">
+      <li class="listeInteractivite__item">
+        <p><a href="#" class="bouton">Bouton</a></p>
+        <p>État de base</p>
+<!--        <p>Couleur $vertLime, <code>border-radius</code> de 18px</p>-->
+      </li>
+      <li class="listeInteractivite__item">
+        <p><a href="#" class="bouton bouton--hover">Bouton</a></p>
+        <p>État survol</p>
+<!--        <p>Couleur $vertLime, transparence à 25%</p>-->
+      </li>
+      <li class="listeInteractivite__item">
+        <p><a href="#" class="bouton bouton--active">Bouton</a></p>
+        <p>État actif</p>
+<!--        <p>Couleur $vertLime, transparence à 50%</p>-->
+      </li>
+    </ul>
+
+    <ul class="listeInteractivite" style="background-color: #131344; color: white;">
+      <li class="listeInteractivite__item">
+        <p><a href="#" class="bouton bouton--inverse">Bouton</a></p>
+        <p>Inversé, état de base</p>
+<!--        <p>Bordure $vertLime</p>-->
+      </li>
+      <li class="listeInteractivite__item">
+        <p><a href="#" class="bouton bouton--inverse bouton--inverse--hover">Bouton</a></p>
+        <p>Inversé, état survol</p>
+<!--        <p>Bordure 2px $vertLime, transparence à 25%</p>-->
+      </li>
+      <li class="listeInteractivite__item">
+        <p><a href="#" class="bouton bouton--inverse bouton--inverse--active">Bouton</a></p>
+        <p>Inversé, état actif</p>
+<!--        <p>Bordure 2px $vertLime, transparence à 50%</p>-->
+      </li>
+    </ul>
+
+  </section>
+</body>
+</html>

@@ -1,0 +1,21 @@
+/**
+ * @author Gabriel Caron <1861095@csfoy.ca>
+ * @version 2020.1
+*
+* GUIDE DE STYLES
+*
+*/
+
+.listeInteractivite {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+
+  &__item {
+	flex: 1 1 100%;
+  }
+}

@@ -1,0 +1,54 @@
+/**
+* @author Gabriel Caron <1861095@csfoy.ca>
+* @description Styles par défaut des hyperliens
+*/
+
+.hyperlien {
+  color: $hyperlien;
+
+  &--visited {
+	color: $bleuMarin;
+  }
+
+  &--hover {
+	color: lighten($hyperlien, 25%);
+  }
+
+  &--active {
+	color: lighten($hyperlien, 35%);
+  }
+}
+
+.lien-externe {
+  @include fontSize(25px);
+  display: block;
+  margin-top: 1.5rem;
+  transition: all, 0.3s ease-in-out;
+
+  &:link {
+	color: $hyperlien;
+  }
+
+  &:visited {
+	color: $bleuMarin;
+  }
+
+  &:hover {
+	color: lighten($hyperlien, 10%);
+  }
+
+  &:active {
+	color: lighten($hyperlien, 15%);
+  }
+
+  &::before {
+	background: url("../images/icone_lien_hypertexte.svg") no-repeat center;
+	background-size: contain;
+	height: 4rem;
+	width: 4rem;
+	display: inline-block;
+	content: "";
+	margin-right: 1rem;
+	vertical-align: top;
+  }
+}

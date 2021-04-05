@@ -1,0 +1,302 @@
+/**
+ * @author Gabriel Caron <1861095@csfoy.ca>
+ * @version 2020.1
+*
+* ------------------
+* TABLE DES MATIERES
+* ------------------
+* PIED DE PAGE
+** Bloc infolettre
+** Bloc navigation
+** Bloc réseaux sociaux
+** Bloc nous contacter
+*/
+
+
+/***** PIED DE PAGE *****/
+
+.pied {
+  // Bloc infolettre
+  .infolettre {
+	@include conteneur1200px;
+	@include rangeeGrid12col;
+	padding: 3rem 3rem 10rem 3rem;
+	@media (min-width: $desktop600px) {
+	  padding: 3rem 0 10rem 0;
+	}
+
+	&__titre {
+	  width: 100%;
+	  @include fontSize(40px);
+	  @media (min-width: $desktop600px) {
+		@include fontSize(50px);
+	  }
+	  @media (min-width: $desktop1000px) {
+		@include fontSize(60px);
+	  }
+	  @media (min-width: $desktop1200px) {
+		@include fontSize(70px);
+	  }
+
+	  &ligne1 {
+		display: block;
+	  }
+
+	  &ligne2 {
+		display: block;
+		text-align: right;
+	  }
+	}
+  }
+
+  & .conteneur-titre {
+	grid-column: 1 / 13;
+	margin-bottom: 0.5em;
+	@media (min-width: 450px) {
+	  grid-column: 2 / 12;
+	}
+	@media (min-width: $desktop600px) {
+	  grid-column: 3 / 11;
+	}
+	@media (min-width: $desktop800px) {
+	  grid-column: 4 / 10;
+	}
+  }
+
+  & .souligne--regulier {
+	margin-left: 30%;
+  }
+
+  &__formulaire {
+	grid-row: 2;
+	grid-column: 1 / 13;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-gap: 20px;
+	@media (min-width: $desktop600px) {
+	  grid-column: 2 / 12;
+	}
+	@media (min-width: $desktop1000px) {
+	  grid-column: 4 / 10;
+	}
+  }
+
+  &__label {
+	grid-column: 1 / 7;
+	margin-bottom: -1rem;
+  }
+
+  &__champ {
+	grid-column: 1 / 13;
+	border: 1px solid #8E9095;
+	border-radius: 5px;
+	height: 4.8rem;
+	@media (min-width: $desktop600px) {
+	  grid-column: 1 / 5;
+	}
+  }
+
+  &__bouton {
+	grid-column: 1 / 13;
+	@media (min-width: $desktop600px) {
+	  grid-column: 5 / 7;
+	}
+  }
+
+  // Bloc navigation
+
+  .menu {
+	background-color: $jaune;
+	padding: 1rem 3rem 2em 3rem;
+
+	&__conteneur-menu {
+	  @media (min-width: $desktop1000px) {
+		@include conteneur1200px;
+		@include rangeeGrid12col;
+	  }
+	}
+
+	.logo {
+	  @media (min-width: $desktop600px) {
+		@include rangeeGrid12col;
+	  }
+	  @media (min-width: $desktop1000px) {
+		grid-column: 1 / 13;
+	  }
+	  position: relative;
+	  top: -7rem;
+
+	  &__entete {
+		grid-column: 2 / 7;
+		grid-row: 1;
+	  }
+
+	  &__pied {
+		grid-column: 1 / 7;
+		@media (min-width: $desktop1000px) {
+		  grid-column: 1 / 5;
+		}
+	  }
+
+	  &__titre-pied {
+		grid-column: 3 / 12;
+		margin-top: 1rem;
+		font-family: $Montserrat-Bold;
+		font-weight: bold;
+		@include fontSize(20px);
+		line-height: 125%;
+		letter-spacing: 0.25em;
+		text-transform: uppercase;
+		@media (min-width: $desktop1000px) {
+		  grid-column: 5 / 8;
+		}
+	  }
+	}
+
+	&__conteneur-navigation {
+	  @media (min-width: $desktop1000px) {
+		grid-column: 1 / 10;
+		grid-row: 2;
+	  }
+	}
+
+	&__bouton {
+	  display: inline-block;
+	  margin: -5rem 0 2rem 0;
+	  @include fontSize(16px);
+	  @media (min-width: $desktop1000px) {
+		grid-column: 10 / 13;
+		grid-row: 2;
+		align-self: start;
+	  }
+	  @media (min-width: $desktop1200px) {
+		@include fontSize(20px);
+	  }
+	}
+
+	&__liste {
+	  @media (min-width: $desktop1000px) {
+		position: relative;
+		top: -3em;
+		height: initial;
+	  }
+	}
+
+	&__lien {
+	  font-family: $Montserrat-Bold;
+	  font-weight: bold;
+	  @include fontSize(25px);
+	  letter-spacing: 0.05em;
+	  text-transform: uppercase;
+	  padding-left: 3rem;
+	  @media (min-width: $desktop600px) {
+		@include fontSize(30px);
+	  }
+	  @media (min-width: $desktop1000px) {
+		@include fontSize(23px);
+		padding-left: 0;
+	  }
+	  @media (min-width: 1100px) {
+		@include fontSize(27px);
+	  }
+	  @media (min-width: $desktop1200px) {
+		@include fontSize(30px);
+	  }
+
+	  &:hover {
+		text-decoration: none;
+	  }
+
+	  &.bouton {
+		@include fontSize(20px);
+		text-transform: none;
+		text-align: center;
+	  }
+	}
+
+	& .courante {
+	  border-bottom: 3px solid #000;
+	}
+
+	&__navContextuelleListe {
+	  padding: 0 3rem;
+	  @media (min-width: $desktop1000px) {
+		padding: initial;
+	  }
+	}
+  }
+
+  // Bloc réseaux sociaux
+
+  .sociaux {
+	padding: 2rem 0;
+	width: 100%;
+
+	@media (min-width: $desktop1000px) {
+	  grid-column: 1 / 7;
+	  padding: 0;
+	  margin-top: -8rem;
+	}
+
+	&__titre {
+	  display: inline-block;
+	  @include fontSize(18px);
+	  letter-spacing: 0.05em;
+	}
+
+	&__liste {
+	  display: inline-block;
+	  vertical-align: middle;
+	  padding-left: 0.5rem;
+	}
+
+	&__item {
+	  display: inline-block;
+	  padding: 0 0.5rem;
+
+	}
+
+	& .icone-facebook:hover {
+	  fill: $blanc;
+	}
+
+	& .icone-instagram:hover {
+	  & .contour {
+		fill: $blanc;
+	  }
+	}
+  }
+
+  // Bloc nous contacter
+
+  .contacter {
+	@include paddingMobile3rem;
+	background-color: $bleuViolet;
+	color: $blanc;
+	@include fontSize(20px);
+	@media (min-width: $desktop600px) {
+	  @include fontSize(25px);
+	}
+
+	&__conteneur {
+	  @include conteneur1200px;
+	  padding-bottom: 3em;
+	}
+
+	& .contacter__titre {
+	  @include fontSize(45px);
+	  @media (min-width: $desktop600px) {
+		@include fontSize(60px);
+	  }
+	}
+
+	&__nom {
+	  font-family: $Montserrat-Bold;
+	  font-weight: bold;
+	}
+
+	&__lien {
+	  color: $blanc;
+	}
+  }
+}

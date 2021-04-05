@@ -1,0 +1,150 @@
+/**
+ * @author Gabriel Caron <1861095@csfoy.ca>
+ * @version 2020.1
+*
+* ------------------
+* TABLE DES MATIERES
+* ------------------
+* EN-TÊTE
+*/
+
+/***** EN-TÊTE *****/
+
+.entete {
+  &__conteneurBleed {
+	background-color: $jaune;
+	z-index: 900;
+	position: relative;
+	padding: 3rem 0 8rem 0;
+	margin-top: -25px;
+	@media (min-width: $desktop1000px) {
+	  padding: 7rem 0;
+	}
+  }
+
+  &__conteneurGrille {
+	@include conteneur1200px;
+	position: relative;
+	z-index: 900;
+	@include paddingMobile3rem;
+	@media (min-width: $desktop1000px) {
+	  @include rangeeGrid12col;
+	}
+  }
+
+  & .menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	@media (min-width: $desktop1000px) {
+	  grid-column: 1 / 10;
+	}
+
+	&__rangeeBouton {
+	  width: 100%;
+	  text-align: right;
+	}
+
+	&__liste {
+	  flex-basis: 100%;
+	}
+
+	&__lien {
+	  font-family: $Montserrat-Bold;
+	  font-weight: bold;
+	  @include fontSize(25px);
+	  letter-spacing: 0.05em;
+	  text-transform: uppercase;
+	  transition: all, 0.3s ease-in-out;
+	  @media (min-width: $desktop600px) {
+		@include fontSize(30px);
+	  }
+	  @media (min-width: $desktop1000px) {
+		@include fontSize(23px);
+	  }
+	  @media (min-width: 1150px) {
+		@include fontSize(27px);
+	  }
+	  @media (min-width: 1250px) {
+		@include fontSize(30px);
+	  }
+
+	  &.bouton {
+		@include fontSize(20px);
+		text-transform: none;
+		text-align: center;
+	  }
+	}
+
+	& .courante {
+	  border-bottom: 3px solid #000;
+	}
+  }
+
+  &__bouton {
+	align-self: flex-start;
+	grid-column: 1 / 9;
+	position: absolute;
+	@include fontSize(16px);
+	@media (min-width: $desktop1000px) {
+	  grid-column: 10 / 13;
+	  grid-row: 1;
+	  position: static;
+	}
+	@media (min-width: 1250px) {
+	  @include fontSize(20px);
+	  padding: 1rem 0.25rem;
+	}
+  }
+
+
+  & .logo {
+	@include conteneur1200px;
+	@include rangeeGrid12col;
+	position: relative;
+	z-index: 1000;
+	top: -4rem;
+	@include paddingMobile3rem;
+
+	&__entete {
+	  grid-column: 1 / 10;
+	  grid-row: 1;
+	  @media (min-width: $desktop600px) {
+		grid-column: 1 / 7;
+	  }
+	  @media (min-width: $desktop1000px) {
+		grid-column: 2 / 7;
+	  }
+	}
+
+	&__festival-titre {
+	  grid-column: 1 / 13;
+	  grid-row: 2;
+	  margin: -1rem 0 0 9rem;
+	  font-family: $Montserrat-Bold;
+	  font-weight: bold;
+	  text-transform: uppercase;
+	  letter-spacing: 1.5px;
+	  line-height: 125%;
+	  @include fontSize(20px);
+	  @media (min-width: $desktop600px) {
+		grid-column: 3 / 7;
+		margin: -0.75em 0;
+	  }
+	}
+
+	&__festival-dates {
+	  grid-column: 1 / 13;
+	  grid-row: 3;
+	  margin: -1rem 0 0 9rem;
+	  font-family: $Montserrat-Regular;
+	  font-weight: bold;
+	  text-transform: uppercase;
+	  @include fontSize(16px);
+	  @media (min-width: $desktop600px) {
+		grid-column: 3 / 7;
+		margin: 0;
+	  }
+	}
+  }
+}

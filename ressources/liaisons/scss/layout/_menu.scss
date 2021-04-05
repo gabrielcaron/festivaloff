@@ -1,0 +1,187 @@
+/**
+ * @author Gabriel Caron <1861095@csfoy.ca>
+ * @version 2020.1
+*
+* ------------------
+* TABLE DES MATIERES
+* ------------------
+* STYLES COMMUNS DU MENU ET VERSION MOBILE
+** Navigation contextuelle
+** Si Javascript désactivé
+*/
+
+
+/****** STYLES COMMUNS DU MENU ET VERSION MOBILE *******/
+
+.menu {
+  &__controle {
+	border: none;
+	background-color: transparent;
+	@media (min-width: $desktop1000px) {
+	  display: none;
+	}
+
+	&:hover,
+	&:active {
+	  //background-color: #f5ae09;
+	}
+
+	&:focus {
+	  outline-offset: -5px;
+	  outline: #f5ae09 auto 5px;
+	}
+
+	&::before {
+	  background: url("../images/icone_menu_ouvert.svg") no-repeat center;
+	  background-size: contain;
+	  height: 3.5rem;
+	  display: block;
+	  content: '';
+	}
+  }
+
+  &__liste {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	max-height: none;
+	@media (min-width: $desktop1000px) {
+	  display: flex;
+	  justify-content: space-between;
+	  height: 100%;
+	}
+
+	&Item {
+	  border-bottom: 3px solid $noir;
+
+	  &:first-child {
+		border-top: 3px solid #000000;
+		margin-top: 2rem;
+	  }
+
+	  @media (min-width: $desktop1000px) {
+		display: inline-block;
+		height: 100%;
+		border-bottom: none;
+		&:first-child {
+		  border: none;
+		  margin: 0;
+		}
+	  }
+	}
+  }
+
+  &__lien {
+	display: block;
+	width: 100%;
+	padding: 0.5rem 0;
+
+	&:link,
+	&:visited {
+	  text-decoration: none;
+	  color: inherit;
+	}
+
+	&:hover,
+	&:active {
+	  background-color: $blanc;
+	  color: $noir;
+	  padding-left: 2rem;
+	  transition: all, 0.1s ease-in-out;
+	  @media (min-width: $desktop1000px) {
+		padding-left: 0;
+		background-color: transparent;
+		border-bottom: 3px solid $noir;
+	  }
+	}
+
+	&:focus {
+	  /*outline: none;
+	  border-left: 5px solid #f5ae09;*/
+	  outline-offset: -5px;
+	  outline: #f5ae09 auto 5px;
+	}
+
+	&--actif {
+	  border-left: 5px solid #f4d07c;
+	}
+  }
+
+  &--ferme .menu__controle::before {
+	background-size: contain;
+	background: url("../images/icone_menu_ferme.svg") no-repeat center;
+	height: 3.5rem;
+	display: block;
+	content: '';
+  }
+
+  // Navigation contextuelle
+
+  &__navContextuelleListe {
+	list-style-type: none;
+	padding: 0;
+	margin: 0.75rem 0 1rem 0;
+	text-decoration: none;
+	@media (min-width: $desktop1000px) {
+	  margin: 0.75rem 0 0 0;
+	}
+  }
+
+  &__navContextuelleLien {
+	display: block;
+	width: 100%;
+	@include fontSize(18px);
+	padding: 0.25rem 0;
+	@media (min-width: $desktop1000px) {
+	  padding: 0;
+	  @include fontSize(16px);
+	}
+	@media (min-width: $desktop1200px) {
+	  padding: 0;
+	  @include fontSize(18px);
+	}
+
+	&:link,
+	&:visited {
+	  text-decoration: none;
+	  color: inherit;
+	}
+
+	&:hover,
+	&:active {
+	  padding-left: 1rem;
+	  text-decoration: underline;
+	  @media (min-width: $desktop1000px) {
+		padding-left: 0;
+	  }
+	}
+
+	&:focus {
+	  /*outline: none;
+	  border-left: 5px solid #f5ae09;*/
+	  outline-offset: -5px;
+	  outline: #f5ae09 auto 5px;
+	}
+  }
+
+}
+
+
+/* Si le javascript est activé */
+/* Pour des raisons d'accessibilité, on ne cache pas le menu mobile
+ */
+.js .menu__liste {
+  max-height: 100vh;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.js .menu--ferme .menu__liste {
+  max-height: 0;
+  @media (min-width: $desktop1000px) {
+	max-height: none;
+  }
+}
+
+
+

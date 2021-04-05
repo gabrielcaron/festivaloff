@@ -1,0 +1,71 @@
+/**
+ * @author Gabriel Caron <1861095@csfoy.ca>
+ * @version 2020.1
+*
+* ------------------
+* TABLE DES MATIERES
+* ------------------
+* VARIABLES
+** Polices de caractères
+* PALETTES DE COULEURS
+** Couleurs de base
+** Autres couleurs
+* POINTS DE RUPTURE
+*/
+
+/** Polices de caractères **/
+
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url(../fonts/montserrat-regular.woff2) format('woff2'),
+  url(../fonts/montserrat-regular.woff) format('woff'),
+  url(../fonts/montserrat-regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Montserrat-Italic;
+  src: url(../fonts/montserrat-italic.woff2) format('woff2'),
+  url(../fonts/montserrat-italic.woff) format('woff'),
+  url(../fonts/montserrat-italic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(../fonts/montserrat-bold.woff2) format('woff2'),
+  url(../fonts/montserrat-bold.woff) format('woff'),
+  url(../fonts/montserrat-bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Montserrat-Bold-Italic;
+  src: url(../fonts/montserrat-bolditalic.woff2) format('woff2'),
+  url(../fonts/montserrat-bolditalic.woff) format('woff'),
+  url(../fonts/montserrat-bolditalic.ttf) format('truetype');
+}
+
+$Montserrat-Regular: Montserrat-Regular, sans-serif;
+$Montserrat-Italic: Montserrat-Italic, sans-serif;
+$Montserrat-Bold: Montserrat-Bold, sans-serif;
+$Montserrat-Bold-Italic: Montserrat-Bold-Italic, sans-serif;
+
+
+/** Palette de couleurs **/
+
+/* Couleurs de base */
+$jaune: #FFE34F;
+$bleuViolet: #3200C1;
+$bleuMarin: #131344;
+$noir: #000;
+$blanc: #fff;
+
+$jauneTransparent50: transparentize($jaune, 0.50);
+
+/* Autres couleurs */
+$hyperlien: $bleuViolet;
+
+
+/** Points de rupture **/
+$desktop600px: 600px;
+$desktop800px: 800px;
+$desktop1000px: 1000px;
+$desktop1200px: 1200px;

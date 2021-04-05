@@ -1,0 +1,62 @@
+/**
+ * @author Gabriel Caron <1861095@csfoy.ca>
+ * @version 2020.1
+*
+* GUIDE DE STYLES
+*
+*/
+
+.palette {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+
+  &__item {
+	flex: 1 1 100%;
+	text-align: center;
+	margin-right: 2em;
+
+	&:last-child {
+	  margin-right: 0;
+	}
+  }
+
+  &__couleur {
+	padding-top: 70%;
+	/* Complétez ici pour chacune des variations de couleurs
+	 * (Ex. .palette__couleur--bleuMoyen)
+	 * Utilisez & pour composer vos sélecteurs CSS selon l'approche BEM
+	 */
+	&--jaune {
+	  background-color: $jaune;
+
+	  &-alpha50 {
+		background-color: transparentize($jaune, 0.5);
+	  }
+	}
+
+	&--bleuViolet {
+	  background-color: $bleuViolet;
+	}
+
+	&--bleuMarin {
+	  background-color: $bleuMarin;
+	}
+
+	&--noir {
+	  background-color: $noir;
+	}
+
+	&--blanc {
+	  background-color: $blanc;
+	}
+  }
+
+  &__details {
+	font-size: 0.75em;
+  }
+}

@@ -1,0 +1,128 @@
+/**
+* @author Ève Février - efevrier@cegep-ste-foy.qc.ca
+* @author Yves Hélie - yves.helie@cegep-ste-foy.qc.ca
+* @author Gabriel Caron - 1861095@csfoy.ca
+* @version 2020.1
+*
+* ------------------
+* TABLE DES MATIERES
+* ------------------
+* UTILITAIRES DE BASE
+** Box sizing
+* Clearfix
+* ACCESSIBILITÉ
+** Visually hidden/screen reader only
+** Lien sauter au contenu
+* TYPOGRAPHIE
+* Fonction pour convertir une valeur de font-size en pixels à son équivalent rem
+* Mixin qui inclus la solution de repli en pixel suivi par la valeur calculée en rem
+* Mixin pour conteneur de base à 1200px
+* Mixin pour rangée Flex par défaut
+* Mixin pour rangée Grid sur 12 colonnes
+* Mixin pour le padding de base pour mobile
+*/
+
+/***** Utilitaires de base *****/
+
+/** Box sizing **/
+@mixin border-box-sizing {
+  html {
+	box-sizing: border-box;
+  }
+  *, *:before, *:after {
+	box-sizing: inherit;
+  }
+}
+
+/* Clearfix */
+@mixin clearfix {
+  &:after {
+	content: " ";
+	display: table;
+	clear: both;
+  }
+}
+
+/***** Accessibilité *****/
+
+// Hide only visually, but have it available for screenreaders:
+// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  // Extends the .visuallyhidden class to allow the element to be focusable
+  // when navigated to via the keyboard: https://www.drupal.org/node/897638
+  &.focusable:active,
+  &.focusable:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+  }
+}
+
+.visuallyhidden,
+.screen-reader-only {
+  @include visuallyhidden;
+}
+
+.sauter-contenu {
+  padding: 2rem 6rem;
+  line-height: 12rem;
+  color: $blanc;
+  background-color: #3200C1;
+  top: -12px;
+}
+
+/******** Typographie *****/
+
+// Fonction pour convertir une valeur de font-size en pixels à son équivalent rem
+@function calculateRem($size) {
+  $remSize: $size / 10px;
+  @return #{$remSize}rem;
+}
+
+// Mixin qui inclus la solution de repli en pixel suivi par la valeur calculée en rem
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+
+// Mixin pour conteneur de base
+@mixin conteneur1200px {
+  @media (min-width: $desktop600px) {
+	margin: 0 auto;
+	max-width: 1200px;
+  }
+}
+
+// Mixin pour rangée Flex par défaut
+@mixin rangeeFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+// Mixin pour rangée Grid sur 12 colonnes
+@mixin rangeeGrid12col {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+}
+
+// Mixin pour le padding de base pour mobile
+@mixin paddingMobile3rem {
+  padding: 0 3rem;
+  @media (min-width: 1300px) {
+	padding: 0;
+  }
+}
